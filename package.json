@@ -1,0 +1,37 @@
+{
+	"name": "gamecollection-mongodb",
+	"version": "0.0.1",
+	"description": "MongoDB wrapper to retrieve data from your game collection",
+	"main": "gamecollection-mongodb.js",
+	"scripts": {
+		"start": "node gamecollection-mongodb",
+		"test": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/.bin/mocha",
+		"lint": "./node_modules/.bin/eslint *.js"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	},
+	"keywords": [
+		"games",
+		"mongodb"
+	],
+	"author": {
+		"name": "Patrick Kraaij",
+		"url": "http://patrickkraaij.nl"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:patrickkraaij/gamecollection-mongodb.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"mongodb": "^3.0.6"
+	},
+	"devDependencies": {
+		"chai": "^4.1.2",
+		"eslint": "^4.19.1",
+		"mocha": "^5.1.1",
+		"nyc": "^11.7.1",
+		"sinon": "^5.0.5"
+	}
+}
