@@ -1,6 +1,6 @@
 {
 	"name": "gamecollection-mongodb",
-	"version": "0.1.1",
+	"version": "0.1.0",
 	"description": "MongoDB wrapper to retrieve data from your game collection",
 	"main": "gamecollection-mongodb.js",
 	"scripts": {
