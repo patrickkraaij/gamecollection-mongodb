@@ -21,7 +21,7 @@ $ touch ~/.gamecollection.config.js
 module.exports = {
   url: 'mongodb://[username:password@]host1[:port1][/[database][?options]]',
   db: 'nameOfYourDatabase',
-	collection: 'games'
+  collection: 'games'
 };
 ```
 
