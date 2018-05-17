@@ -30,12 +30,12 @@ module.exports = {
 			images: data.images
 		};
 	},
-	getGames: async () => {
+	getGames: async (query) => {
 		try {
 			const connection = await MongoClient.connect(module.exports.uri());
 			const db = connection.db(configFile.db);
 			const collection = db.collection(configFile.collection);
-			const result = await collection.find().toArray();
+			const result = await collection.find(query).toArray();
 			connection.close();
 			return result.length > 0 ? result.sort(utils.sortGameTitle) : { errorMessage: 'No games found' };
 		}
