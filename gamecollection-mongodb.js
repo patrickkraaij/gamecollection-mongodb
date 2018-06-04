@@ -15,6 +15,7 @@ module.exports = {
 	},
 	schema: (data) => {
 		return {
+			apiId: { thegamesdb: data.id },
 			title: data.title,
 			platform: data.platform,
 			releaseDate: data.releaseDate,
@@ -119,5 +120,22 @@ module.exports = {
 		catch (err) {
 			throw err;
 		}
+	},
+	updateGame: async (id, field, newValue) => {
+		try {
+			const connection = await MongoClient.connect(module.exports.uri());
+			const db = connection.db(configFile.db);
+			const collection = db.collection(configFile.collection);
+			const result = await collection.updateOne(
+				{ '_id': ObjectId(id) },
+				{ $set: { [field]: newValue } }
+			);
+			connection.close();
+			return result;
+		}
+		catch (err) {
+			throw err;
+		}
+
 	}
 };

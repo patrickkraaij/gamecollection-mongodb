@@ -1,6 +1,10 @@
 # Change Log
 
-## v0.1.1 (2018-05-17)
+## v0.2.0 (2018-06-04)
+**Technical enhancements:**
+- Added `updateGame` function, update single field with the new given value
+
+## v0.1.0 (2018-05-17)
 **Technical enhancements:**
 - `getGames` function accepts a parameter to filter through the collection
 
