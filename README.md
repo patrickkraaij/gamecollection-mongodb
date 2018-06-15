@@ -76,7 +76,8 @@ async getGame(mongodbID);
 */
 async addGame(Object);
 async updateGame(mongodbID, field, value);
-async deleteGame(mongodbID)
+async deleteGame(mongodbID);
+async dropGameCollection();
 ```
 
 ## Contributing
