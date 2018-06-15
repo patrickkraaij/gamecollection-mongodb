@@ -121,6 +121,19 @@ module.exports = {
 			throw err;
 		}
 	},
+	dropGameCollection: async () => {
+		try {
+			const connection = await MongoClient.connect(module.exports.uri());
+			const db = connection.db(configFile.db);
+			const collection = db.collection(configFile.collection);
+			const result = await collection.drop();
+			connection.close();
+			return result;
+		}
+		catch (err) {
+			throw err;
+		}
+	},
 	updateGame: async (id, field, newValue) => {
 		try {
 			const connection = await MongoClient.connect(module.exports.uri());
@@ -136,6 +149,5 @@ module.exports = {
 		catch (err) {
 			throw err;
 		}
-
 	}
 };
